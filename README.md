@@ -8,4 +8,4 @@ https://docs.google.com/document/d/1oPHMlFWWYHcKQnoyIWBLuMC4PKSdYBb4TaipYQZxlz0/
 
 Heres the Link to Patreon
 
-patreon.com/GameShop_Engine
+https://patreon.com/GameShop_Engine
