@@ -19,3 +19,8 @@ Here is an image of GameShop Engine.  Work in Progress
 
 ![Screenshot from 2024-11-28 12-29-30](https://github.com/user-attachments/assets/9c64244a-c584-4971-a1fb-3d724fbb2ea8)
 
+Heres an image of an Early Prototype of GameShop Engine.
+
+![WhiteMan](https://github.com/user-attachments/assets/e0984f8f-7898-4a33-9153-024828601f90)
+
+
