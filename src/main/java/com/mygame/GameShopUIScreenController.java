@@ -20,17 +20,26 @@ public class GameShopUIScreenController implements ScreenController {
   
     Nifty nifty;
     Screen screen;
-
+    GameShopCurrencyMesh[] cm;
   /**
    * Fill the listbox with items. In this case with Strings.
    */
   public void fillMyListBox() {
     ListBox listBox = screen.findNiftyControl("myListBox", ListBox.class);
-    listBox.addItem("a");
-    listBox.addItem("b");
-    listBox.addItem("c");
+//    listBox.addItem("a");
+//    listBox.addItem("b");
+//    listBox.addItem("c");
+
+      for (GameShopCurrencyMesh cm: this.cm) {
+      
+          listBox.addItem("[CurrencyMesh]");
+      }
   }
 
+  public GameShopUIScreenController(GameShopCurrencyMesh[] cm){
+  
+      this.cm = cm;
+  }
   /**
    * When the selection of the ListBox changes this method is called.
    */

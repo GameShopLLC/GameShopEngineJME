@@ -28,6 +28,13 @@ import de.lessvoid.nifty.screen.DefaultScreenController;
 
 public class GameShopUI extends BaseAppState {
 
+    GameShopCurrencyMesh[] cm;
+    
+    public GameShopUI(GameShopCurrencyMesh[] cm){
+    
+        this.cm = cm;
+        
+    }
     @Override
     protected void initialize(Application app) {
         //It is technically safe to do all initialization and cleanup in the
@@ -63,7 +70,7 @@ public class GameShopUI extends BaseAppState {
 
         // <screen>
         nifty.addScreen("GameShopUI_Screen", new ScreenBuilder("GameShopUI"){{
-            controller(new GameShopUIScreenController()); // Screen properties
+            controller(new GameShopUIScreenController(cm)); // Screen properties
 
             // <layer>
             layer(new LayerBuilder("UI_Layer") {{

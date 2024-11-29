@@ -80,7 +80,7 @@ public class Main extends SimpleApplication {
 
         this.viewPort.setBackgroundColor(ColorRGBA.White);
 
-        this.stateManager.attach(new GameShopUI());
+        
 
 
         //this.cameraNode = new CameraNode("CameraNode", cam);
@@ -143,6 +143,7 @@ public class Main extends SimpleApplication {
             //SimpleMesh sm = new SimpleMesh(this, new Vector3f[]{}, new Vector2f[]{}, makeTexture(), this.getRootNode());
         }
 
+        this.stateManager.attach(new GameShopUI(cms));
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
         getRootNode().attachChild(baseNode);
