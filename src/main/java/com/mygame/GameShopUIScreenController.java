@@ -30,9 +30,11 @@ public class GameShopUIScreenController implements ScreenController {
 //    listBox.addItem("b");
 //    listBox.addItem("c");
 
+        int i = 0;
       for (GameShopCurrencyMesh cm: this.cm) {
       
-          listBox.addItem("[CurrencyMesh]");
+          listBox.addItem("[CurrencyMesh] " + i);
+          i++;
       }
   }
 

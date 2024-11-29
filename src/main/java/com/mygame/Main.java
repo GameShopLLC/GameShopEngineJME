@@ -2,6 +2,7 @@ package com.mygame;
 
 //import com.gameshopcorp.gameshopengine.ui.GameShopFont;
 import com.jme3.app.SimpleApplication;
+import com.jme3.input.InputManager;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Quaternion;
@@ -54,6 +55,7 @@ public class Main extends SimpleApplication {
   settings.setFrequency(modes[i].getRefreshRate());
   settings.setBitsPerPixel(modes[i].getBitDepth());
   settings.setFullscreen(device.isFullScreenSupported());
+
   //app.setSettings(settings);
        app.setSettings(settings);
        app.start();
@@ -66,6 +68,9 @@ public class Main extends SimpleApplication {
     public void simpleInitApp() {
 
 
+        this.flyCam.setDragToRotate(true);
+        InputManager inputManager = this.getInputManager();
+        inputManager.setCursorVisible(true);
 //        Box b = new Box(1, 1, 1);
 //        Geometry geom = new Geometry("Box", b);
 //
@@ -78,6 +83,7 @@ public class Main extends SimpleApplication {
 //
         //System.out.println("Max Texture size: " + GL11.glGetInteger(GL11.GL_MAX_TEXTURE_SIZE));
 
+        
         this.viewPort.setBackgroundColor(ColorRGBA.White);
 
         
