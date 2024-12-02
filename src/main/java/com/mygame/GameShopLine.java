@@ -10,16 +10,15 @@ import com.jme3.math.Vector3f;
  *
  * @author lynden
  * 
- * This is a Dual Normal Vector
+ * The Shortest Path Between Two Points
  * 
- * Nicknamed GameShopArrow
  */
-public class GameShopArrow {
+public class GameShopLine {
     
     public Vector3f a;
     public Vector3f b;
     
-    public GameShopArrow(Vector3f a, Vector3f b){
+    public GameShopLine(Vector3f a, Vector3f b){
     
         this.a = new Vector3f(a);
         this.b = new Vector3f(b);

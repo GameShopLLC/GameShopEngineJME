@@ -25,9 +25,17 @@ public class GameShopInputInterface {
     
         this.app = app;
         
+        registerListener(dreamCastAnalogListener, "pick target");
+        
     }
     
-    private AnalogListener analogListener = new AnalogListener() {
+    public final void registerListener(AnalogListener al, String name){
+    
+        app.getInputManager().addListener(al, name);
+    }
+    
+    private final AnalogListener dreamCastAnalogListener = new AnalogListener() {
+    @Override
     public void onAnalog(String name, float intensity, float tpf) {
         
         

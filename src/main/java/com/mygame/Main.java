@@ -75,7 +75,9 @@ public class Main extends SimpleApplication {
         inputManager.addMapping("pick target", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
  
 
-        GameShopDreamCast gsDreamCast = new GameShopDreamCast(this);
+        //GameShopDreamCast gsDreamCast = new GameShopDreamCast(this);
+        
+        GameShopInputInterface gsii = new GameShopInputInterface(this);
         
         this.flyCam.setDragToRotate(true);
         InputManager inputManager = this.getInputManager();
