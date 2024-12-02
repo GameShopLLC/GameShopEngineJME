@@ -56,5 +56,7 @@ public class GameShopDreamCast {
         } // else if ...
     }
   };
+    
+    //public void scan
 
 }

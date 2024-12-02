@@ -10,9 +10,7 @@ import com.jme3.math.Vector3f;
  *
  * @author lynden
  * 
- * This is a BiNormal Vector
- * 
- * A Vector Tuple
+ * This is a Dual Normal Vector
  * 
  * Nicknamed GameShopArrow
  */
