@@ -46,7 +46,8 @@ public class GameShopInputInterface {
         // Convert screen click to 3d position
         Vector2f click2d =  app.getInputManager().getCursorPosition();
         Vector3f click3d = app.getCamera().getWorldCoordinates(new Vector2f(click2d.x, click2d.y), 0f).clone();
-        Vector3f dir = app.getCamera().getWorldCoordinates(new Vector2f(click2d.x, click2d.y), 1f).subtractLocal(click3d).normalizeLocal();
+        //Vector3f dir = app.getCamera().getWorldCoordinates(new Vector2f(click2d.x, click2d.y), 0.1f).subtractLocal(click3d).normalizeLocal();
+        Vector3f dir = app.getCamera().getWorldCoordinates(new Vector2f(click2d.x, click2d.y), 0.01f).subtract(click3d);
         
          app.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(app, new GameShopLine(click3d, dir))});
         
