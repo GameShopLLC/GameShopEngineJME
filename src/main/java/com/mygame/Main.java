@@ -78,7 +78,7 @@ public class Main extends SimpleApplication {
 
         gsp = new GameShopExecutorPool(this);
         //gsp.initialize(this);
-        gsp.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(this, new GameShopLine(new Vector3f(), new Vector3f()))});
+        //gsp.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(this, new GameShopLine(cam.getLocation(), cam.getDirection()))});
         
         inputManager.addMapping("pick target", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
  
@@ -198,7 +198,7 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleUpdate(float tpf) {
         //TODO: add update code
-
+       //this.gsp.update(tpf);
         this.getStateManager().getState(GameShopExecutorPool.class).update(tpf);
     }
 

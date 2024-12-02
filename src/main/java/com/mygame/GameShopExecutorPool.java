@@ -143,9 +143,11 @@ public class GameShopExecutorPool extends BaseAppState {
     @Override
     public void update(float tpf) {
     
+        if (this.gsr[0] != null){
         for (GameShopRunnable gsr: this.gsr){
         
             gsr.update(tpf);
+        }
         }
     }
     

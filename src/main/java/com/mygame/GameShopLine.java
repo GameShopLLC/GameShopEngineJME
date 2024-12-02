@@ -24,4 +24,10 @@ public class GameShopLine {
         this.b = new Vector3f(b);
         
     }
+    
+    @Override
+    public String toString(){
+    
+        return "GameShopLine " + a  + " " + b;
+    }
 }
