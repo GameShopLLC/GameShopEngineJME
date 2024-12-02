@@ -3,6 +3,10 @@ package com.mygame;
 //import com.gameshopcorp.gameshopengine.ui.GameShopFont;
 import com.jme3.app.SimpleApplication;
 import com.jme3.input.InputManager;
+import com.jme3.input.KeyInput;
+import com.jme3.input.MouseInput;
+import com.jme3.input.controls.KeyTrigger;
+import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Quaternion;
@@ -68,6 +72,11 @@ public class Main extends SimpleApplication {
     public void simpleInitApp() {
 
 
+        inputManager.addMapping("pick target", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
+ 
+
+        GameShopDreamCast gsDreamCast = new GameShopDreamCast(this);
+        
         this.flyCam.setDragToRotate(true);
         InputManager inputManager = this.getInputManager();
         inputManager.setCursorVisible(true);
