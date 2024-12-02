@@ -15,7 +15,7 @@ import com.jme3.scene.Geometry;
  *
  * @author lynden
  */
-public class GameShopDreamCast implements Runnable {
+public class GameShopDreamCast implements GameShopRunnable {
     
     SimpleApplication app;
     GameShopLine gsl;
@@ -28,14 +28,12 @@ public class GameShopDreamCast implements Runnable {
        // app.getInputManager().addListener(analogListener, "pick target");
     }
 
+
     @Override
-    public void run() {
-       // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void update(float tpf) {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
-       while (true){
-       
-           
-       }
+        
     }
     
 

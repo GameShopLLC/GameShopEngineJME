@@ -46,6 +46,8 @@ import java.util.logging.Logger;
  */
 public class Main extends SimpleApplication {
 
+    GameShopExecutorPool gsp;
+    
     public static void main(String[] args) {
         Main app = new Main();
         AppSettings settings = new AppSettings(true);
@@ -71,10 +73,15 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleInitApp() {
 
+        
+        
 
+        gsp = new GameShopExecutorPool(this);
+        //gsp.initialize(this);
+        gsp.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(this, new GameShopLine(new Vector3f(), new Vector3f()))});
+        
         inputManager.addMapping("pick target", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
  
-
         //GameShopDreamCast gsDreamCast = new GameShopDreamCast(this);
         
         GameShopInputInterface gsii = new GameShopInputInterface(this);
@@ -161,6 +168,7 @@ public class Main extends SimpleApplication {
         }
 
         this.stateManager.attach(new GameShopUI(cms));
+        this.stateManager.attach(gsp);
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
         getRootNode().attachChild(baseNode);
@@ -191,6 +199,7 @@ public class Main extends SimpleApplication {
     public void simpleUpdate(float tpf) {
         //TODO: add update code
 
+        this.getStateManager().getState(GameShopExecutorPool.class).update(tpf);
     }
 
     @Override
