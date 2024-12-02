@@ -26,7 +26,8 @@ public class GameShopDreamCast implements GameShopRunnable {
     
         this.app = app;
         this.gsl = gsl;
-        increase = gsl.a.add(gsl.b);
+        increase = gsl.a.subtract(gsl.b);
+        System.out.println("Increase " + increase);
        // app.getInputManager().addListener(analogListener, "pick target");
     }
 
@@ -37,7 +38,7 @@ public class GameShopDreamCast implements GameShopRunnable {
     
         
         
-        if (time > 0.5f){
+        if (time > 0.1f){
        
             gsl.a = new Vector3f(gsl.a.add(increase));
             gsl.b = new Vector3f(gsl.b.add(increase));

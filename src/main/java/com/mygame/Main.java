@@ -169,6 +169,8 @@ public class Main extends SimpleApplication {
 
         this.stateManager.attach(new GameShopUI(cms));
         this.stateManager.attach(gsp);
+        this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0, new GameShopRunnable[] {gsii});
+        
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
         getRootNode().attachChild(baseNode);
