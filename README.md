@@ -4,7 +4,7 @@ This will be the Best Game Engine to go on the Market.  It is Completely Alterna
 
 License:
 
-All Derivative works and publishing are Copyrighted under GameShop LLC of North Carolina
+All Derivative works and publishing are Copyrighted under Lynden Jay Evans Jr Of GameShop LLC of North Carolina
 
 Heres the DevLog:
 
