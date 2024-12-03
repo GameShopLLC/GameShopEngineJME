@@ -109,37 +109,7 @@ public class GameShopATMS {
                 i++;
             }
         }
-        //newDrawCalls.addAll(index, drawCalls);
-        //        String[] temp = new String[this.drawCalls.length];
-//
-//        int i = 0;
-//        for (String dc: this.drawCalls){
-//
-//            temp[i] = dc;
-//            i++;
-//        }
-//
-//        this.drawCalls = new String[(this.drawCalls.length) + drawCalls.length];
-//
-//        System.out.println("dc " + this.drawCalls.length);
-////        i = 0;
-////        int j = 0;
-//
-//        for (i = 0; i < index; i++){
-//
-//            this.drawCalls[i] = temp[i];
-//        }
-//
-//        for (i = index; i < index + drawCalls.length; i++){
-//
-//            this.drawCalls[i] = drawCalls[i - index];
-//        }
-//
-//        for (i = index + drawCalls.length; i < this.drawCalls.length; i++){
-//
-//            this.drawCalls[i] = temp[i - (drawCalls.length)];
-//        }
-
+    
     }
 
     public void process(){

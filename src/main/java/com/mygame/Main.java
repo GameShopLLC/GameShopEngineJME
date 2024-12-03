@@ -128,6 +128,10 @@ public class Main extends SimpleApplication {
            // gameShopATMS.addDrawCalls(0, new String[] {"drawSquare 50 50 50 Color 255 0 0 255", "drawCircle 150 150 100 Color 0 0 255 255", "drawLine Vector2 0 0 Vector2 100 100 Radius 15 Color 0 0 0 255",
            // "drawCurrencyLine CurrencyLine Vector3 0 0 0 Vector3 10 20 0 Vector3 20 30 0 Vector3 30 40 0 NumPoints 4 Radius 10 Color 255 255 255 255"});
            gameShopATMS.addDrawCalls(0, new String[]{"drawCircle 96 78 50 Color 0 0 0 255","drawCircle 150 78 50 Color 0 0 0 255", "drawCircle 128 48 55 Color 0 0 0 255", "drawCircle 108 68 25 Color 255 255 255 255", "drawCircle 148 68 25 Color 255 255 255 255"});
+        //   GameShopUtility<String> gsu =  new GameShopUtility<String>();
+           
+//              gsu.addToArray(0, gameShopATMS.drawCalls , new String[]{"drawCircle 96 78 50 Color 0 0 0 255","drawCircle 150 78 50 Color 0 0 0 255", "drawCircle 128 48 55 Color 0 0 0 255", "drawCircle 108 68 25 Color 255 255 255 255", "drawCircle 148 68 25 Color 255 255 255 255"});
+        
            gameShopATMS.process();
             System.out.println(gameShopATMS.toString());
             //gameShopATMS.layer.drawCircle((short) 128, (short) 63, (short) 63, ColorRGBA.fromRGBA255(255,215,175,255));
@@ -169,7 +173,7 @@ public class Main extends SimpleApplication {
 
         this.stateManager.attach(new GameShopUI(cms));
         this.stateManager.attach(gsp);
-        this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0, new GameShopRunnable[] {gsii});
+        this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0,  new GameShopRunnable[] {gsii});//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
         
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
@@ -202,6 +206,7 @@ public class Main extends SimpleApplication {
         //TODO: add update code
        //this.gsp.update(tpf);
         this.getStateManager().getState(GameShopExecutorPool.class).update(tpf);
+        //baseNode.setLocalTranslation();
     }
 
     @Override
