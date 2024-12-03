@@ -40,8 +40,8 @@ public class GameShopDreamCast implements GameShopRunnable {
         
         if (time > 0.1f){
        
-            gsl.a = new Vector3f(gsl.a.add(increase));
-            gsl.b = new Vector3f(gsl.b.add(increase));
+            gsl.a = new Vector3f(gsl.a.subtract(increase));
+            gsl.b = new Vector3f(gsl.b.subtract(increase));
             System.out.println(gsl);
             time = 0f;
         }

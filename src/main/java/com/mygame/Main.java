@@ -173,8 +173,8 @@ public class Main extends SimpleApplication {
 
         this.stateManager.attach(new GameShopUI(cms));
         this.stateManager.attach(gsp);
+        this.stateManager.attach(new GameShopDreamCastCloud(this));
         this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0,  new GameShopRunnable[] {gsii});//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
-        
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
         getRootNode().attachChild(baseNode);
@@ -206,9 +206,11 @@ public class Main extends SimpleApplication {
         //TODO: add update code
        //this.gsp.update(tpf);
         this.getStateManager().getState(GameShopExecutorPool.class).update(tpf);
-        //baseNode.setLocalTranslation();
+        if (this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0] != null){
+        baseNode.setLocalTranslation(this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0].gsl.a);
+    
+        }
     }
-
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code

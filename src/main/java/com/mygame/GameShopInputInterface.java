@@ -52,8 +52,11 @@ public class GameShopInputInterface implements GameShopRunnable {
         Vector3f dir = app.getCamera().getWorldCoordinates(new Vector2f(click2d.x, click2d.y), 0.1f).clone();
         
         if (clickOn){
-         app.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(app, new GameShopLine(click3d, dir))});//.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(app, new GameShopLine(click3d, dir))});
-        
+         GameShopDreamCast gsdc = new GameShopDreamCast(app, new GameShopLine(click3d, dir));
+         
+         app.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0, new GameShopRunnable[] { gsdc });//.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(app, new GameShopLine(click3d, dir))});
+         app.getStateManager().getState(GameShopDreamCastCloud.class).addGameShopDreamCasts(0, new GameShopDreamCast[]{ gsdc });
+      
          clickOn = false;
         }
       } // else if ...
