@@ -74,6 +74,11 @@ public class GameShopLayer {
                 layer[y][(x * 4) + 1]  = (byte) (color.getColorArray()[1] * 255);
                 layer[y][(x * 4) + 2] = (byte) (color.getColorArray()[2] * 255);
                 layer[y][(x * 4) + 3]  = (byte) (color.getColorArray()[3] * 255);
+////
+//   layer[y][x * 4] = (byte) (color.getColorArray()[0] );
+//                layer[y][(x * 4) + 1]  = (byte) (color.getColorArray()[1] );
+//                layer[y][(x * 4) + 2] = (byte) (color.getColorArray()[2] );
+//                layer[y][(x * 4) + 3]  = (byte) (color.getColorArray()[3]  );
 //
             }
         }
@@ -295,12 +300,19 @@ public class GameShopLayer {
                     layer[y][(x * 4) + 1] = (byte) (color.getColorArray()[1] * 255);
                     layer[y][(x * 4) + 2] = (byte) (color.getColorArray()[2] * 255);
                     layer[y][(x * 4) + 3] = (byte) (color.getColorArray()[3] * 255);
+                    
+//                    layer[y][x * 4] = (byte) (color.getColorArray()[0]); //127
+//                    layer[y][(x * 4) + 1] = (byte) (color.getColorArray()[1]);
+//                    layer[y][(x * 4) + 2] = (byte) (color.getColorArray()[2]);
+//                    layer[y][(x * 4) + 3] = (byte) (color.getColorArray()[3]);
                     //System.out.println("IN");
 
                 }
             }
+            
         }
 
+        System.out.println("layer " + layer[0][2]);
 //        for (short h = 0; h < height; h++) {
 //
 //            for (short w = 0; w < width * 4; w += 4) {

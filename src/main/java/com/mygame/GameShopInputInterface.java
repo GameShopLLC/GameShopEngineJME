@@ -86,21 +86,24 @@ public class GameShopInputInterface implements GameShopRunnable {
           
           System.out.println("Ray Origin " + ray.origin);
           System.out.println("Cam Location " + app.getCamera().getLocation());
+           app.getStateManager().getState(GameShopBank.class).onClick(pt, Integer.parseInt(hit.split(" ")[1]));//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
+       
           
+          break;
          // System.out.println("Collision " + new Vector3f(pt.x * dist, pt.y * dist, pt.z));
           
         }
         // 5. Use the results (we mark the hit object)
-        if (results.size() > 0){
-          // The closest collision point is what was truly hit:
-          CollisionResult closest = results.getClosestCollision();
-          //mark.setLocalTranslation(closest.getContactPoint());
-          // Let's interact - we mark the hit with a red dot.
-         // rootNode.attachChild(mark);
-        } else {
-        // No hits? Then remove the red mark.
-        //  rootNode.detachChild(mark);
-        }
+//        if (results.size() > 0){
+//          // The closest collision point is what was truly hit:
+//          CollisionResult closest = results.getClosestCollision();
+//          //mark.setLocalTranslation(closest.getContactPoint());
+//          // Let's interact - we mark the hit with a red dot.
+//         // rootNode.attachChild(mark);
+//        } else {
+//        // No hits? Then remove the red mark.
+//        //  rootNode.detachChild(mark);
+//        }
       }
     }
   };

@@ -8,6 +8,7 @@ import com.mygame.GameShopATMS;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.material.RenderState;
+import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
@@ -47,6 +48,8 @@ public class GameShopCurrencyMesh {
     public Mesh m;
 
     public Geometry geom;
+    
+    public Material mat;
     
     //There should be sets of 4 CurrencyLines.... example 4 8 12 etc...
     public GameShopCurrencyMesh(SimpleApplication app, GameShopCurrencyLine[] currencyLines, GameShopATMS atms, Node node){
@@ -292,13 +295,24 @@ for (int j = 0; j < indices.length; j++) {
         this.geom = new Geometry("OurMesh " + node.getName() , m);
 
 
-        Material mat = new Material(app.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");
+         mat = new Material(app.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");//Common/MatDefs/Light/Lighting.j3md");//"Common/MatDefs/Misc/Unshaded.j3md");
         mat.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
+        
         mat.getAdditionalRenderState().setBlendMode(RenderState.BlendMode.Alpha);
-
-        //mat.getAdditionalRenderState().setBlendEquationAlpha(RenderState.BlendEquationAlpha.Max);
+       // mat.getAdditionalRenderState().set(true);
+//mat.getAdditionalRenderState().setCustomBlendFactors(RenderState.BlendFunc.Src_Color, RenderState.BlendFunc.Dst_Color, RenderState.BlendFunc.Src_Alpha, RenderState.BlendFunc.One_Minus_Src_Alpha);
+//mat.getAdditionalRenderState().s
+//mat.getAdditionalRenderState().set
+               //mat.getAdditionalRenderState().setDepthWrite(false);
+        //mat.getAdditionalRenderState().setBlendEquation(RenderState.BlendEquation.Add);
+       // mat.getAdditionalRenderState().setBlendEquationAlpha(RenderState.BlendEquationAlpha.Max);
         // mat.setColor("Color", ColorRGBA.fromRGBA255(255,255,255,255));
+        //mat.setTransparent(true);
+      // mat.setColor("Color", ColorRGBA.fromRGBA255(255, 255, 255, 250));
         mat.setTexture("ColorMap", atms.makeTexture());
+        //mat.setBoolean("VertexColor",false); 
+        //mat.set
+        //mat.setBoolean("UseAlpha", true);
         geom.setMaterial(mat);
         geom.setQueueBucket(RenderQueue.Bucket.Transparent);
         //geom.getMesh().scaleTextureCoordinates(new Vector2f(2, 2));

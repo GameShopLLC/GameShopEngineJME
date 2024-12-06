@@ -17,6 +17,7 @@ import com.jme3.texture.image.ColorSpace;
 import com.jme3.util.BufferUtils;
 
 import java.nio.ByteBuffer;
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -178,6 +179,7 @@ public class GameShopATMS {
         ByteBuffer data = BufferUtils.createByteBuffer(this.layer.outputLayer());
         // ByteBuffer data = BufferUtils.createByteBuffer((byte)0,(byte)127,(byte)0,(byte)62);
         Image image = new Image(Image.Format.RGBA8 , this.layer.width, this.layer.height, data, ColorSpace.Linear);
+        //Image image = new Image();
         return new Texture2D(image);
     }
 

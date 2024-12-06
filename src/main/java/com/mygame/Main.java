@@ -7,12 +7,14 @@ import com.jme3.input.KeyInput;
 import com.jme3.input.MouseInput;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.MouseButtonTrigger;
+import com.jme3.light.PointLight;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
+import com.jme3.post.FilterPostProcessor;
 import com.jme3.renderer.RenderManager;
 import com.jme3.scene.CameraNode;
 import com.jme3.scene.Geometry;
@@ -32,6 +34,7 @@ import java.awt.GraphicsEnvironment;
 import java.nio.ByteBuffer;
 import java.util.logging.Logger;
 
+import com.jme3.post.Filter;
 
 //import com.simsilica.lemur.Button;
 //import com.simsilica.lemur.Command;
@@ -74,7 +77,8 @@ public class Main extends SimpleApplication {
     public void simpleInitApp() {
 
         
-        
+        //FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
+        //TranslucentBucketFilter tbf = new TranslucentBucketFilter();
 
         gsp = new GameShopExecutorPool(this);
         //gsp.initialize(this);
@@ -127,7 +131,8 @@ public class Main extends SimpleApplication {
             //gameShopATMS.addDrawCalls(3, new String[]{ "Not", "The", "Person", "Named"});
            // gameShopATMS.addDrawCalls(0, new String[] {"drawSquare 50 50 50 Color 255 0 0 255", "drawCircle 150 150 100 Color 0 0 255 255", "drawLine Vector2 0 0 Vector2 100 100 Radius 15 Color 0 0 0 255",
            // "drawCurrencyLine CurrencyLine Vector3 0 0 0 Vector3 10 20 0 Vector3 20 30 0 Vector3 30 40 0 NumPoints 4 Radius 10 Color 255 255 255 255"});
-           gameShopATMS.addDrawCalls(0, new String[]{"drawCircle 96 78 50 Color 0 0 0 255","drawCircle 150 78 50 Color 0 0 0 255", "drawCircle 128 48 55 Color 0 0 0 255", "drawCircle 108 68 25 Color 255 255 255 255", "drawCircle 148 68 25 Color 255 255 255 255"});
+          // gameShopATMS.drawCalls = new String[1];
+           gameShopATMS.addDrawCalls(0, new String[]{"drawCircle 0 0 255 Color 0 0 255 255","drawCircle 96 78 50 Color 0 0 0 255","drawCircle 150 78 50 Color 0 0 0 255", "drawCircle 128 48 55 Color 0 0 0 255", "drawCircle 108 68 25 Color 255 255 255 255", "drawCircle 148 68 25 Color 255 255 255 255"});
         //   GameShopUtility<String> gsu =  new GameShopUtility<String>();
            
 //              gsu.addToArray(0, gameShopATMS.drawCalls , new String[]{"drawCircle 96 78 50 Color 0 0 0 255","drawCircle 150 78 50 Color 0 0 0 255", "drawCircle 128 48 55 Color 0 0 0 255", "drawCircle 108 68 25 Color 255 255 255 255", "drawCircle 148 68 25 Color 255 255 255 255"});
@@ -170,11 +175,14 @@ public class Main extends SimpleApplication {
             System.out.println(gameShopATMS.toString());
             //SimpleMesh sm = new SimpleMesh(this, new Vector3f[]{}, new Vector2f[]{}, makeTexture(), this.getRootNode());
         }
-
+ 
         this.stateManager.attach(new GameShopUI(cms));
+        this.stateManager.attach(new GameShopBank(this));
         this.stateManager.attach(gsp);
         //this.stateManager.attach(new GameShopDreamCastCloud(this));
         this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0,  new GameShopRunnable[] {gsii});//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
+        this.getStateManager().getState(GameShopBank.class).addGSCMs(0,  cms);//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
+       
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
         getRootNode().attachChild(baseNode);
