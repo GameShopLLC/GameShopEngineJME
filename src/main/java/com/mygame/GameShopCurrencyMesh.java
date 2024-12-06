@@ -289,7 +289,7 @@ for (int j = 0; j < indices.length; j++) {
         // *************************************************************************
 
         // Creating a geometry, and apply a single color material to it
-        this.geom = new Geometry("OurMesh", m);
+        this.geom = new Geometry("OurMesh " + node.getName() , m);
 
 
         Material mat = new Material(app.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");

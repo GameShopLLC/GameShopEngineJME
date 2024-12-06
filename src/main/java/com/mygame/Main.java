@@ -80,7 +80,7 @@ public class Main extends SimpleApplication {
         //gsp.initialize(this);
         //gsp.addGameShopRunnables(0, new GameShopRunnable[] { new GameShopDreamCast(this, new GameShopLine(cam.getLocation(), cam.getDirection()))});
         
-        inputManager.addMapping("pick target", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
+        inputManager.addMapping("Shoot", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
  
         //GameShopDreamCast gsDreamCast = new GameShopDreamCast(this);
         
@@ -113,7 +113,7 @@ public class Main extends SimpleApplication {
         //1 460 924
         //2 504 956
         GameShopCurrencyMesh[] cms = new GameShopCurrencyMesh[n];
-        baseNode = new Node();
+        baseNode = new Node("baseNode");
        // baseNode.setLocalTranslation(new Vector3f(cam.getLocation().getX(), cam.getLocation().getY(), cam.getLocation().getZ()));
         //baseNode.rotate(0, 90, 0);
         //baseNode.setLocalTranslation(cam.getLocation());
@@ -173,7 +173,7 @@ public class Main extends SimpleApplication {
 
         this.stateManager.attach(new GameShopUI(cms));
         this.stateManager.attach(gsp);
-        this.stateManager.attach(new GameShopDreamCastCloud(this));
+        //this.stateManager.attach(new GameShopDreamCastCloud(this));
         this.getStateManager().getState(GameShopExecutorPool.class).addGameShopRunnables(0,  new GameShopRunnable[] {gsii});//.addGameShopRunnables(0, new GameShopRunnable[] {gsii});
         //cameraNode.setControlDir(CameraControl.ControlDirection.SpatialToCamera);
         //cameraNode.setLocalTranslation(getRootNode().getLocalTranslation());
@@ -206,10 +206,10 @@ public class Main extends SimpleApplication {
         //TODO: add update code
        //this.gsp.update(tpf);
         this.getStateManager().getState(GameShopExecutorPool.class).update(tpf);
-        if (this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0] != null){
-        baseNode.setLocalTranslation(this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0].gsl.a);
-    
-        }
+//        if (this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0] != null){
+//        baseNode.setLocalTranslation(this.getStateManager().getState(GameShopDreamCastCloud.class).gsDreamCasts[0].gsl.a);
+//    
+//        } 
     }
     @Override
     public void simpleRender(RenderManager rm) {

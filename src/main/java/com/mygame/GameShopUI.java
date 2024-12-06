@@ -170,51 +170,51 @@ control(new ListBoxBuilder("myListBox") {{
                 }});
                  
                 
-                panel(new PanelBuilder("Panel_ATMS") {{
-                    childLayoutHorizontal(); // panel properties, add more...
-
-                     height("100%");
-                        width("20%");
-                    
-                    // GUI elements
-                    control(new ButtonBuilder("Button_ATMS", "ATMS Info Here"){{
-                        alignRight();
-                        //valignLeft();
-                        height("100%");
-                        width("100%");
-                    }});
-                    //.. add more GUI elements here
-
-                }});
+//                panel(new PanelBuilder("Panel_ATMS") {{
+//                    childLayoutHorizontal(); // panel properties, add more...
+//
+//                     height("100%");
+//                        width("20%");
+//                    
+//                    // GUI elements
+//                    control(new ButtonBuilder("Button_ATMS", "ATMS Info Here"){{
+//                        alignRight();
+//                        //valignLeft();
+//                        height("100%");
+//                        width("100%");
+//                    }});
+//                    //.. add more GUI elements here
+//
+//                }});
                     
 
                 }});
                         
-                          panel(new PanelBuilder("Panel_Bottom") {{
-                    childLayoutHorizontal(); // panel properties, add more...
-  height("20%");
-                     width("100%");
-                     
-              
-                panel(new PanelBuilder("Panel_Files") {{
-                    childLayoutHorizontal(); // panel properties, add more...
-
-                     height("100%");
-                     width("100%");
-                    
-                    // GUI elements
-                    control(new ButtonBuilder("Button_Files", "Files Info Here"){{
-                        alignLeft();
-                        //valignLeft();
-                        height("100%");
-                        width("100%");
-                    }});
-                   
-                    //.. add more GUI elements here
-
-                }});
-
-                }});
+//                          panel(new PanelBuilder("Panel_Bottom") {{
+//                    childLayoutHorizontal(); // panel properties, add more...
+//  height("20%");
+//                     width("100%");
+//                     
+//              
+//                panel(new PanelBuilder("Panel_Files") {{
+//                    childLayoutHorizontal(); // panel properties, add more...
+//
+//                     height("100%");
+//                     width("100%");
+//                    
+//                    // GUI elements
+//                    control(new ButtonBuilder("Button_Files", "Files Info Here"){{
+//                        alignLeft();
+//                        //valignLeft();
+//                        height("100%");
+//                        width("100%");
+//                    }});
+//                   
+//                    //.. add more GUI elements here
+//
+//                }});
+//
+//                }});
                     
 
                 }});
